@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mad-interp-research-code"
+version = "0.1.0"
+description = "Research analysis and experiment code for MAD-Interp"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "scikit-learn",
+    "scipy",
+    "statsmodels",
+]
+
+[project.optional-dependencies]
+inference = [
+    "accelerate",
+    "bitsandbytes",
+    "torch",
+    "transformers",
+    "vllm",
+]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools]
+package-dir = {"" = "code"}
+py-modules = ["common"]
+
+[tool.setuptools.packages.find]
+where = ["code"]
+include = ["analysis*", "figures*", "interp*", "runner*"]
+namespaces = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

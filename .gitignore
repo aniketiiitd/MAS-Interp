@@ -1,0 +1,32 @@
+# Keep the public repository focused on the code and benchmark folders.
+/*
+!/.gitignore
+!/README.md
+!/pyproject.toml
+!/code/
+!/madbench/
+
+# Local environments, credentials, caches, and generated experiment artifacts.
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+build/
+dist/
+*.egg-info/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+**/*credentials*.json
+**/*secrets*.json
+outputs/
+results/
+
+# Generated benchmark products not used by the paper.
+/madbench/madbench_v2_extended.jsonl
+/madbench/madbench_v2_manifest.json
